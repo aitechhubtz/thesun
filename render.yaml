@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: the-sun-laravel
+    env: docker
+    dockerfilePath: Dockerfile
+    buildCommand: composer install --no-dev --optimize-autoloader
+    startCommand: apache2-foreground
+    branch: main
+
+databases:
+  - name: the-sun-mysql
+    engine: mysql
+    version: "8"
+    plan: starter
